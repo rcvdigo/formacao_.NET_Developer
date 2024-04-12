@@ -2,9 +2,11 @@
 // using dotnet.Models;
 
 // Pessoa pessoa1 = new Pessoa();
+// using ExemploFundamentos.Common.Models;
+
 // Calculadora calculadoraBasica = new Calculadora();
 
-
+// calculadoraBasica.Somar(x: 10, y: 10);
 // pessoa1.Nome = "Rodrigo";
 // pessoa1.Idade = 18;
 // pessoa1.Apresentar();
@@ -153,56 +155,113 @@
 // }
 // while (resultado > 0);
 
-using ExemploFundamentos.Common.Models;
+// using ExemploFundamentos.Common.Models;
 
-Pessoa pessoa = new()
-{
-    Nome = "Rodrigo",
-    Idade = 29
-};
+// Pessoa pessoa = new()
+// {
+//     Nome = "Rodrigo",
+//     Idade = 29
+// };
 
-pessoa.Apresentar();
+// pessoa.Apresentar();
 
-// MENU ITERATIVO
-string opcao;
-bool exibirMenu = true;
+// // MENU ITERATIVO
+// string opcao;
+// bool exibirMenu = true;
 
-while (exibirMenu)
-{
-    // Ao escolher uma opção limpar o console
-    // Console.Clear();
+// while (exibirMenu)
+// {
+//     // Ao escolher uma opção limpar o console
+//     // Console.Clear();
 
-    // Opções disponiveis
-    Console.WriteLine("Digite a sua opção:");
-    Console.WriteLine("1 - Cadastrar cliente");
-    Console.WriteLine("2 - Buscar cliente");
-    Console.WriteLine("3 - Apagar cliente");
-    Console.WriteLine("4 - Encerrar");
+//     // Opções disponiveis
+//     Console.WriteLine("Digite a sua opção:");
+//     Console.WriteLine("1 - Cadastrar cliente");
+//     Console.WriteLine("2 - Buscar cliente");
+//     Console.WriteLine("3 - Apagar cliente");
+//     Console.WriteLine("4 - Encerrar");
 
-    // Capturar o Input do console digitado pelo usuario
-    opcao = Console.ReadLine() ?? string.Empty;
+//     // Capturar o Input do console digitado pelo usuario
+//     opcao = Console.ReadLine() ?? string.Empty;
 
-    switch (opcao)
-    {
-        case "1":
-            Console.WriteLine("Cadastro de cliente");
-            break;
+//     switch (opcao)
+//     {
+//         case "1":
+//             Console.WriteLine("Cadastro de cliente");
+//             break;
 
-        case "2":
-            Console.WriteLine("Busca de cliente");
-            break;
+//         case "2":
+//             Console.WriteLine("Busca de cliente");
+//             break;
 
-        case "3":
-            Console.WriteLine("Apagar de cliente");
-            break;
+//         case "3":
+//             Console.WriteLine("Apagar de cliente");
+//             break;
 
-        case "4":
-            Console.WriteLine("Encerrar");
-            exibirMenu = false;
-            break;
+//         case "4":
+//             Console.WriteLine("Encerrar");
+//             exibirMenu = false;
+//             break;
         
-        default:
-            Console.WriteLine("Opção inválida");
-            break;
-    }
+//         default:
+//             Console.WriteLine("Opção inválida");
+//             break;
+//     }
+// }
+
+// Trabalhando com Arrays
+
+int[] arrayInteiros = new int[3];
+
+arrayInteiros[0] = 1;
+arrayInteiros[1] = 2;
+arrayInteiros[2] = 3;
+
+Console.WriteLine("\nFOR COMUM: \n");
+
+for (int contador = 0; contador < arrayInteiros.Length; contador++)
+{
+    Console.WriteLine(
+        $"Posição Nº: {contador} - Valor = {arrayInteiros[contador]}"
+        );
+}
+
+Console.WriteLine("\nFOREACH: \n");
+
+foreach(int valor in arrayInteiros)
+{
+    int posicao = Array.IndexOf(arrayInteiros, valor);
+
+    Console.WriteLine(
+        $"Posição Nº: {posicao} - Valor = {valor}"
+    );
+}
+
+// Redimensionando Arrays
+
+Array.Resize(ref arrayInteiros, arrayInteiros.Length * 2);
+// Após está ação o arrayInteiros terá seu tamanho dobrado para arrayInteiros[8]
+// Este método resize, nada mais faz que, copiar o array atual, em seguida cria um novo com um novo tamanho e coloca os valores copiados do array antigo no novo.
+
+// Fazendo manualmente o que o método Resize faz:
+
+int [] arrayInteirosDobrado = new int[arrayInteiros.Length * 2];
+Array.Copy(arrayInteiros, arrayInteirosDobrado, arrayInteiros.Length);
+
+// Criando uma lista em C#
+List<string> listaString = new List<string>();
+
+listaString.Add("SP");
+listaString.Add("BH");
+listaString.Add("MG");
+
+Console.WriteLine("\nAPRENDENDO USAR LISTAS EM C#: \n");
+
+foreach (string dados in listaString)
+{
+    int posicao = listaString.IndexOf(dados);
+
+    Console.WriteLine(
+        $"Posição Nº: {posicao} - Valor = {dados}"
+    );
 }

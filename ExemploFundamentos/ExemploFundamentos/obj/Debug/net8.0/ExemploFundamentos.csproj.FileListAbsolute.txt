@@ -10,6 +10,7 @@ C:\dotnet\ExemploFundamentos\ExemploFundamentos\obj\Debug\net8.0\ExemploFundamen
 C:\dotnet\ExemploFundamentos\ExemploFundamentos\obj\Debug\net8.0\ExemploFundamentos.AssemblyInfoInputs.cache
 C:\dotnet\ExemploFundamentos\ExemploFundamentos\obj\Debug\net8.0\ExemploFundamentos.AssemblyInfo.cs
 C:\dotnet\ExemploFundamentos\ExemploFundamentos\obj\Debug\net8.0\ExemploFundamentos.csproj.CoreCompileInputs.cache
+C:\dotnet\ExemploFundamentos\ExemploFundamentos\obj\Debug\net8.0\ExemploFundamentos.sourcelink.json
 C:\dotnet\ExemploFundamentos\ExemploFundamentos\obj\Debug\net8.0\ExemploF.DE0ABCBC.Up2Date
 C:\dotnet\ExemploFundamentos\ExemploFundamentos\obj\Debug\net8.0\ExemploFundamentos.dll
 C:\dotnet\ExemploFundamentos\ExemploFundamentos\obj\Debug\net8.0\refint\ExemploFundamentos.dll
