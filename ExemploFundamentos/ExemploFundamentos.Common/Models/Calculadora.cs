@@ -1,5 +1,8 @@
 namespace ExemploFundamentos.Common.Models
 {
+    /// <summary>
+    /// Representa uma calculadora e suas funcionálidades
+    /// </summary>
     public class Calculadora
     {
         private int soma;
@@ -12,6 +15,11 @@ namespace ExemploFundamentos.Common.Models
         private double tangente;
         private double raiz;
 
+        /// <summary>
+        /// Faz a soma de dois parâmetros, valores sendo positivo ou negativo.
+        /// </summary>
+        /// <param name="x">Valor de X</param>
+        /// <param name="y">Valor de Y</param>
         public void Somar(int x, int y)
         {
             soma = x + y;
