@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj": {}
+    "C:\\dotnet\\ExemploFundamentos\\desafiofundamentos\\DesafioFundamentos.csproj": {}
   },
   "projects": {
-    "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj": {
+    "C:\\dotnet\\ExemploFundamentos\\desafiofundamentos\\DesafioFundamentos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj",
-        "projectName": "ExemploFundamentos.Common",
-        "projectPath": "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj",
+        "projectUniqueName": "C:\\dotnet\\ExemploFundamentos\\desafiofundamentos\\DesafioFundamentos.csproj",
+        "projectName": "DesafioFundamentos",
+        "projectPath": "C:\\dotnet\\ExemploFundamentos\\desafiofundamentos\\DesafioFundamentos.csproj",
         "packagesPath": "C:\\Users\\rcvdi\\.nuget\\packages\\",
-        "outputPath": "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\obj\\",
+        "outputPath": "C:\\dotnet\\ExemploFundamentos\\desafiofundamentos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\rcvdi\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\program files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
