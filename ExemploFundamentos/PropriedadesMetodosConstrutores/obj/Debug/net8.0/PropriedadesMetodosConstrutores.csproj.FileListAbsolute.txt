@@ -1,0 +1,15 @@
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\bin\Debug\net8.0\PropriedadesMetodosConstrutores.exe
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\bin\Debug\net8.0\PropriedadesMetodosConstrutores.deps.json
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\bin\Debug\net8.0\PropriedadesMetodosConstrutores.runtimeconfig.json
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\bin\Debug\net8.0\PropriedadesMetodosConstrutores.dll
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\bin\Debug\net8.0\PropriedadesMetodosConstrutores.pdb
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.AssemblyInfoInputs.cache
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.AssemblyInfo.cs
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.csproj.CoreCompileInputs.cache
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.sourcelink.json
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.dll
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\refint\PropriedadesMetodosConstrutores.dll
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.pdb
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.genruntimeconfig.cache
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\ref\PropriedadesMetodosConstrutores.dll
