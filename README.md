@@ -113,7 +113,7 @@ pessoa1.Apresentar();
 
 # Cases
 
-![image.png](attachment:image.png)
+![alt text](cases.png)
 
 - Em C# se utiliza camelCase ou PascalCase.
 - Nome de classes sempre em PascalCase!!!
@@ -126,12 +126,12 @@ pessoa1.Apresentar();
 
 # Tipos de dados
 
-![image.png](attachment:image-2.png)<br/>
+![alt text](tipos_de_dados.png)<br/>
 
 
-# Operador de atribuição
+# Operadores aritméticos
 
-![image.png](attachment:image-3.png)
+![alt text](operadores_aritmeticos.png)
 
 # Converter tipo de dados (Cast ou Casting)
 
@@ -289,7 +289,7 @@ while (num <= 10)
 
 - Índice: É a posição de um determinado valor de um array, sempre começando com zero.
 
-![image-4.png](attachment:image-4.png)
+![alt text](arrays.png)
 
 1. int elemento = array[0];
 // Elemento receberia o valor igual 42.
