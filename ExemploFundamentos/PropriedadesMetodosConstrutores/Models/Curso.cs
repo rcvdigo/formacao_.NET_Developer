@@ -42,9 +42,28 @@ namespace PropriedadesMetodosConstrutores.Models
         public void ListarAlunos()
         {
             Console.WriteLine($"Alunos do curso de {Nome}: \n");
+
+            // Usando concatenação de strings
             foreach (Pessoa aluno in Alunos)
             {
-                Console.WriteLine(aluno.NomeCompleto);
+                string texto = "\nNº " + (Alunos.IndexOf(aluno)+1) + " " + aluno.NomeCompleto + "\n";
+                Console.WriteLine(
+                    "USANDO CONCATENAÇÃO: " + texto 
+                );
+            }
+
+            // Usando Interpolação de Strings
+            foreach (Pessoa aluno in Alunos)
+            {
+                Console.WriteLine(
+                    $"""
+                    USANDO INTERPOLAÇÃO DE STRINGS:
+                    
+                    Posição: {Alunos.IndexOf(aluno)+1}
+                    Valor: {aluno.NomeCompleto}
+                    
+                    """
+                );
             }
         }
 
