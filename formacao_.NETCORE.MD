@@ -971,3 +971,4 @@ Console.WriteLine($"O número {numero} é " + (numero % 2 == 0 ? "par" : "ímpar
 
     Console.WriteLine(serializacao);
     ```
+    
