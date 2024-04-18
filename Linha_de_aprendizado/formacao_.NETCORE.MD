@@ -952,3 +952,8 @@ Console.WriteLine(
 - Instalando pacotes no VScode:
     -   dotnet add package Newtonsoft.Json --version 13.0.3
 
+# Serialização de dados
+
+- Oque é serialização e deserialização?
+
+- O processo de serializar consiste em transformar objetos em um fluxo de bytes para seu armazenamento ou transmissão: ![alt text](serializacao.png)
