@@ -64,24 +64,24 @@ classDiagram
 ```
 
 ```C#
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-    namespace dotnet.Models
+namespace dotnet.Models
+{
+    public class Pessoa
     {
-        public class Pessoa
-        {
-            public string Nome { get; set; }
-            public int Idade { get; set; }
+        public string Nome { get; set; }
+        public int Idade { get; set; }
 
-            public void Apresentar() 
-            {
-                Console.WriteLine($"Olá, meu nome é {Nome}, e tenho {Idade} anos");
-            }
+        public void Apresentar() 
+        {
+            Console.WriteLine($"Olá, meu nome é {Nome}, e tenho {Idade} anos");
         }
     }
+}
 ```
 
 # Usando namespaces
@@ -90,10 +90,10 @@ classDiagram
 - Desta forma no Program.cs no inicio é necessário colocar a palavra [using] e o nome do namespace [dotnet.Models], ex:
 
 ```C#
-    // Criando uma nova Instancia da Classe Pessoa no Program.cs
-    using dotnet.Models;
+// Criando uma nova Instancia da Classe Pessoa no Program.cs
+using dotnet.Models;
 
-    Pessoa pessoa1 new Pessoa();
+Pessoa pessoa1 new Pessoa();
 ```
 
 - Sendo assim podemos ter classes com o mesmo nome desde que o NameSpace seja diferente.
@@ -101,14 +101,14 @@ classDiagram
 # Usando a classe Pessoa
 
 ```C#
-    // Criando uma nova Instancia da Classe Pessoa no Program.cs
-    using dotnet.Models;
+// Criando uma nova Instancia da Classe Pessoa no Program.cs
+using dotnet.Models;
 
-    Pessoa pessoa1 = new Pessoa();
+Pessoa pessoa1 = new Pessoa();
 
-    pessoa1.Nome = "Rodrigo";
-    pessoa1.Idade = 18;
-    pessoa1.Apresentar();
+pessoa1.Nome = "Rodrigo";
+pessoa1.Idade = 18;
+pessoa1.Apresentar();
 ```
 
 # Cases
@@ -152,7 +152,7 @@ Isso é um Casting implícito!!!
 
 # Operadores condicionais (if, else, switch case)
 
-```c#
+```C#
 // IF e ELSE
 int a = 5;
 int b = 10;
@@ -513,34 +513,34 @@ namespace PropriedadesMetodosConstrutores.Models
     ```
 - As propriedades possuem o get e set, exemplo:
     ```C#
-        public string Nome 
-        { 
-            get => _nome.ToUpper(); // Usando Body Expressions
+    public string Nome 
+    { 
+        get => _nome.ToUpper(); // Usando Body Expressions
 
-            set
-            {
-                if (value == null || value == "")
-                {
-                    #pragma warning disable CA2208
-                    throw new ArgumentNullException("O nome não pode ser vazio.");
-                    #pragma warning restore CA2208
-                }
-                _nome = value; // Atribuir o valor do nome após validação de vazio.
-            } 
-        }
-        public int Idade 
+        set
         {
-            get => _idade; // Usando Body Expressions
-
-            set
+            if (value == null || value == "")
             {
-                if (value <= 0 || value > 130)
-                {
-                    throw new ArgumentOutOfRangeException("A idade deve estar acima de 0 e menor que 130.");
-                }
-                _idade = value;
+                #pragma warning disable CA2208
+                throw new ArgumentNullException("O nome não pode ser vazio.");
+                #pragma warning restore CA2208
             }
+            _nome = value; // Atribuir o valor do nome após validação de vazio.
+        } 
+    }
+    public int Idade 
+    {
+        get => _idade; // Usando Body Expressions
+
+        set
+        {
+            if (value <= 0 || value > 130)
+            {
+                throw new ArgumentOutOfRangeException("A idade deve estar acima de 0 e menor que 130.");
+            }
+            _idade = value;
         }
+    }
     ```
 
 
@@ -767,71 +767,71 @@ Console.WriteLine(
 
 - Interpolação:
     ```C#
-        Console.WriteLine(
-                        $"""
-                        Posição: {Alunos.IndexOf(aluno)+1}
-                        Valor: {aluno.NomeCompleto}
-                        """
-                    );
+    Console.WriteLine(
+                    $"""
+                    Posição: {Alunos.IndexOf(aluno)+1}
+                    Valor: {aluno.NomeCompleto}
+                    """
+                );
     ```
 
 - Concatenação:
     ```C#
-        string texto = "\nNº " + (Alunos.IndexOf(aluno)+1) + " " + aluno.NomeCompleto + "\n";
+    string texto = "\nNº " + (Alunos.IndexOf(aluno)+1) + " " + aluno.NomeCompleto + "\n";
 
 
-        Console.WriteLine(
-            "USANDO CONCATENAÇÃO: " + texto 
-        );
+    Console.WriteLine(
+        "USANDO CONCATENAÇÃO: " + texto 
+    );
     ```
 
 - Representação de formatação de Moeda:
 ```C#
-    decimal moeda = 1582.40M;
-    Console.WriteLine(
-            $"{moeda:C}" // R$ 1.582,40
-            $"{moeda:N}" // 1.582,40
-            $"{moeda:C}" // R$ 1.582,4
-            $"{moeda:N2}" // 1.582,4
-            $"{moeda:P1}" // 1.582,4%
-        ); // O que vem depois do : é o tipo de formatação C = Currency.
+decimal moeda = 1582.40M;
+Console.WriteLine(
+        $"{moeda:C}" // R$ 1.582,40
+        $"{moeda:N}" // 1.582,40
+        $"{moeda:C}" // R$ 1.582,4
+        $"{moeda:N2}" // 1.582,4
+        $"{moeda:P1}" // 1.582,4%
+    ); // O que vem depois do : é o tipo de formatação C = Currency.
 ```
 
 - Formatando o tipo DateTime:
 ```C#
-    DateTime data = DateTime.Now;
-    DateTime dataDois = DateTime.Parse("17/04/2022 18:00");
-    Console.WriteLine(data.ToString("dd/MM/yyyy"));
-    Console.WriteLine(data.ToShortDateString());
-    Console.WriteLine(data.ToShortTimeString());
-    Console.WriteLine(dataDois.ToShortDateString());
+DateTime data = DateTime.Now;
+DateTime dataDois = DateTime.Parse("17/04/2022 18:00");
+Console.WriteLine(data.ToString("dd/MM/yyyy"));
+Console.WriteLine(data.ToShortDateString());
+Console.WriteLine(data.ToShortTimeString());
+Console.WriteLine(dataDois.ToShortDateString());
 ```
 
 # Tratamento de Erros e Exceções
 
 - Estrutura de exemplo:
     ```C#
-        try
-        {
-            Console.WriteLine("Executa esse trecho de código, se cair em algum erro vai para o bloco abaixo do catch.");
-        }
-        catch(FileNotFoundException fnfe)
-        {
-            Console.WriteLine($"Outro tipo de erro: {fnfe.Message}");
-        }
-        catch(Exception ex)
-        {
-            Console.WriteLine($"Se cair em alguma exceção este bloco é executado. MENSAGEM DE ERRO: {ex.Message}");
-        }
-        finally
-        {
-            Console.WriteLine("O bloco finally é executado em seguida após a execução de um try ou de um catch");
-        }
+    try
+    {
+        Console.WriteLine("Executa esse trecho de código, se cair em algum erro vai para o bloco abaixo do catch.");
+    }
+    catch(FileNotFoundException fnfe)
+    {
+        Console.WriteLine($"Outro tipo de erro: {fnfe.Message}");
+    }
+    catch(Exception ex)
+    {
+        Console.WriteLine($"Se cair em alguma exceção este bloco é executado. MENSAGEM DE ERRO: {ex.Message}");
+    }
+    finally
+    {
+        Console.WriteLine("O bloco finally é executado em seguida após a execução de um try ou de um catch");
+    }
     ```
 
 - Usando o Throw, que serve para lançar uma execeção:
     ```C#
-        throw new Exception("Ocorreu uma exceção");
+    throw new Exception("Ocorreu uma exceção");
     ```
 
 # Estruturas de dados Fila(Queue-FIFO), Pilha(Stack-LIFO) e Dictionary
@@ -839,68 +839,68 @@ Console.WriteLine(
 - Fila:
 
     ```C#
-        Queue<int> fila = new Queue<int>();
-        fila.Enqueue(1);
-        fila.Enqueue(4);
-        fila.Enqueue(6);
-        fila.Enqueue(8);
+    Queue<int> fila = new Queue<int>();
+    fila.Enqueue(1);
+    fila.Enqueue(4);
+    fila.Enqueue(6);
+    fila.Enqueue(8);
 
-        foreach(int item in fila)
-        {
-            Console.WriteLine(item);
-        }
+    foreach(int item in fila)
+    {
+        Console.WriteLine(item);
+    }
 
-        Console.WriteLine($"\nRemovendo o elemento: {fila.Dequeue()}\n");
+    Console.WriteLine($"\nRemovendo o elemento: {fila.Dequeue()}\n");
 
-        fila.Enqueue(10);
+    fila.Enqueue(10);
 
-        foreach(int item in fila)
-        {
-            Console.WriteLine(item);
-        }
+    foreach(int item in fila)
+    {
+        Console.WriteLine(item);
+    }
     ```
 
 - Pilha:
 
     ```C#
-        Stack<int> pilha = new Stack<int>();
+    Stack<int> pilha = new Stack<int>();
 
-        pilha.Push(42);
-        pilha.Push(75);
-        pilha.Push(74);
-        pilha.Push(61);
+    pilha.Push(42);
+    pilha.Push(75);
+    pilha.Push(74);
+    pilha.Push(61);
 
-        foreach(int item in pilha)
-        {
-            Console.WriteLine(item);
-        }
+    foreach(int item in pilha)
+    {
+        Console.WriteLine(item);
+    }
 
-        Console.WriteLine($"\nRemovendo o elemento: {pilha.Pop()}\n");
+    Console.WriteLine($"\nRemovendo o elemento: {pilha.Pop()}\n");
 
-        pilha.Push(10);
+    pilha.Push(10);
 
-        foreach(int item in pilha)
-        {
-            Console.WriteLine(item);
-        }
+    foreach(int item in pilha)
+    {
+        Console.WriteLine(item);
+    }
     ```
 
 - Dictionary:
 
     ```C#
-        Dictionary<string, string> dicionario = new Dictionary<string, string>();
+    Dictionary<string, string> dicionario = new Dictionary<string, string>();
 
-        dicionario.Add("SP", "São Paulo");
-        dicionario.Add("BA", "Bahia");
-        dicionario.Add("MG", "Minas Gerais");
+    dicionario.Add("SP", "São Paulo");
+    dicionario.Add("BA", "Bahia");
+    dicionario.Add("MG", "Minas Gerais");
 
-        // Removendo um valor ->
-        dicionario.Remove("SP");
+    // Removendo um valor ->
+    dicionario.Remove("SP");
 
-        foreach (var item in dicionario)
-        {
-            Console.WriteLine($"Chave: {item.Key} Valor: {item.Value}");
-        }
+    foreach (var item in dicionario)
+    {
+        Console.WriteLine($"Chave: {item.Key} Valor: {item.Value}");
+    }
     ```
 
 # Tuplas
@@ -910,36 +910,36 @@ Console.WriteLine(
 - Como declarar uma tupla:
 
     ```C#
-        (int Id, string Nome, string Sobrenome) tupla = (1, "Rodrigo", "Camurça");
-        ValueTuple<int, string, string> outroExemploTupla = (1, "Rodrigo", "Camurça");
-        var maisUmExemplo = Tuple.Create(1, "Rodrigo", "Camurça");
+    (int Id, string Nome, string Sobrenome) tupla = (1, "Rodrigo", "Camurça");
+    ValueTuple<int, string, string> outroExemploTupla = (1, "Rodrigo", "Camurça");
+    var maisUmExemplo = Tuple.Create(1, "Rodrigo", "Camurça");
 
-        Console.WriteLine(
-            $"""
-            ID: {tupla.Id}
-            NOME: {tupla.Nome}
-            SOBRENOME: {tupla.Sobrenome}
+    Console.WriteLine(
+        $"""
+        ID: {tupla.Id}
+        NOME: {tupla.Nome}
+        SOBRENOME: {tupla.Sobrenome}
 
-            Outro Exemplo:
-            ID: {outroExemploTupla.Item1}
-            NOME: {outroExemploTupla.Item2}
-            SOBRENOME: {outroExemploTupla.Item3}
+        Outro Exemplo:
+        ID: {outroExemploTupla.Item1}
+        NOME: {outroExemploTupla.Item2}
+        SOBRENOME: {outroExemploTupla.Item3}
 
-            Outro Exemplo:
-            ID: {maisUmExemplo.Item1}
-            NOME: {maisUmExemplo.Item2}
-            SOBRENOME: {maisUmExemplo.Item3}
-            """
-        );
+        Outro Exemplo:
+        ID: {maisUmExemplo.Item1}
+        NOME: {maisUmExemplo.Item2}
+        SOBRENOME: {maisUmExemplo.Item3}
+        """
+    );
     ```
 
 # IF Ternário
 
-    ```C#
-        var numero = 3;
+```C#
+var numero = 3;
 
-        Console.WriteLine($"O número {numero} é " + (numero % 2 == 0 ? "par" : "ímpar"));
-    ```
+Console.WriteLine($"O número {numero} é " + (numero % 2 == 0 ? "par" : "ímpar"));
+```
 
 # Nuget, serializar e atributos no C#
 
@@ -954,8 +954,20 @@ Console.WriteLine(
 
 # Serialização de dados
 
-- Oque é serialização e deserialização?
+- O que é serialização e deserialização?
 
 - O processo de serializar consiste em transformar objetos em um fluxo de bytes para seu armazenamento ou transmissão: ![alt text](serializacao.png)
 
 - __JSON__ JavaScript Notation Object é um formato de texto que segue a sintaxe do javascript, muito usado para transmitir dados entre aplicações.
+
+- Exemplo de serialização:
+    - 
+    ```C#
+    using Newtonsoft.Json;
+    
+    Vendas v1 = new(id: 1, produto: "Pão", preco: 25.00M);
+
+    string serializacao = JsonConvert.SerializeObject(v1, Formatting.Indented);
+
+    Console.WriteLine(serializacao);
+    ```

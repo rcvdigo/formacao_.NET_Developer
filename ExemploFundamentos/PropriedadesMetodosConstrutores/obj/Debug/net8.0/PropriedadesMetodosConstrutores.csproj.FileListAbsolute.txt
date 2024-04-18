@@ -13,3 +13,6 @@ C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\re
 C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.pdb
 C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.genruntimeconfig.cache
 C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\ref\PropriedadesMetodosConstrutores.dll
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\PropriedadesMetodosConstrutores.csproj.AssemblyReference.cache
+C:\dotnet\ExemploFundamentos\PropriedadesMetodosConstrutores\obj\Debug\net8.0\Propried.25C72E17.Up2Date

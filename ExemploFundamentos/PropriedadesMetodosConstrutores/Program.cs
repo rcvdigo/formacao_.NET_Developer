@@ -1,22 +1,18 @@
-﻿using PropriedadesMetodosConstrutores.Models;
+﻿using System.Net.NetworkInformation;
+using PropriedadesMetodosConstrutores.Models;
+using Newtonsoft.Json;
 
+List<Vendas> listaDeVendas = [];
+Vendas v1 = new(id: 1, produto: "Pão", preco: 25.00M);
+Vendas v2 = new(id: 2, produto: "Pão Baguete", preco: 25.50M);
 
-LeituraArquivo arquivo = new LeituraArquivo();
+listaDeVendas.Add(v1);
+listaDeVendas.Add(v2);
 
-var (sucesso, linhas, quantidade) = arquivo.LerArquivo(caminho: "Arquivos/arquivoLeitura.txt");
+string serializacao = JsonConvert.SerializeObject(listaDeVendas, Formatting.Indented);
 
-if (sucesso)
-{
-    Console.WriteLine($"Quantidade de linhas do arquivo: {quantidade}");
-    foreach (var linha in linhas)
-    {
-        Console.WriteLine(linha);
-    }
-}
-else
-{
-    Console.WriteLine("Não foi possivel ler o arquivo!".ToUpper());
-}
+// Salvando arquivo .json
+File.WriteAllText("Arquivos/vendas.json", serializacao);
 
 
 // Pessoa p1 = new Pessoa(nome: "Rodrigo", sobrenome: "Camurça");
@@ -39,3 +35,21 @@ else
 
 //     """
 // );
+
+
+// LeituraArquivo arquivo = new LeituraArquivo();
+
+// var (sucesso, linhas, quantidade) = arquivo.LerArquivo(caminho: "Arquivos/arquivoLeitura.txt");
+
+// if (sucesso)
+// {
+//     Console.WriteLine($"Quantidade de linhas do arquivo: {quantidade}");
+//     foreach (var linha in linhas)
+//     {
+//         Console.WriteLine(linha);
+//     }
+// }
+// else
+// {
+//     Console.WriteLine("Não foi possivel ler o arquivo!".ToUpper());
+// }
