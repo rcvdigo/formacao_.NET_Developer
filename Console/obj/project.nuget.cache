@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "C0fGy13NyFUz31TyiULsgdgQ/nRo4I/L0XU9jypvBXdQOPKAzhDhDeeAaC9oUd/RujkMyOFl9NykerjWzHmpCw==",
+  "dgSpecHash": "V+A4StXKsnGoJlWHHuarwRIN11YxW5+TzrqUzmr3+G+7o/Fbln1UlO781FEqRQJtRXr1JuWXvijnluFxhdkLTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rcvdi\\OneDrive\\Documentos\\dotnet\\Console\\dotnet.csproj",
+  "projectFilePath": "C:\\dotnet\\Console\\dotnet.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
