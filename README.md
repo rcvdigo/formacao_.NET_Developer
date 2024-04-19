@@ -1167,3 +1167,5 @@ __Tipo de referência:__ Uma variável de um tipo de referência contém uma ref
 - Construindo um sistema de hospedagem de um hotel no C#:
 
 ![alt text](desafio_de_projeto_uml.png)
+
+Clique aqui para acessar o [DESAFIO CONCLUÍDO!!!](https://github.com/rcvdigo/formacao_.NET_Developer/tree/main/ExemploFundamentos/DesafioProjetoHotel)
