@@ -1,14 +1,16 @@
 [
   {
     "Id": 1,
-    "Produto": "Pão",
+    "Nome_Produto": "Pão",
     "Preco": 25.00,
-    "DataVenda": "2024-04-18T08:14:02.0816122-03:00"
+    "DataVenda": "2024-04-18T16:36:00.3721064-03:00",
+    "Desconto": null
   },
   {
     "Id": 2,
     "Nome_Produto": "Pão Baguete",
     "Preco": 25.50,
-    "DataVenda": "2024-04-18T08:14:02.0816122-03:00"
+    "DataVenda": "2024-04-18T16:36:00.3721064-03:00",
+    "Desconto": 10.0
   }
 ]

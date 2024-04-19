@@ -972,3 +972,198 @@ Console.WriteLine($"O número {numero} é " + (numero % 2 == 0 ? "par" : "ímpar
     Console.WriteLine(serializacao);
     ```
     
+    # Tipos especiais no C#
+
+    - Valor nulo (nullable)
+        -   Um tipo de valor nulo permite representar o tipo da variável e adicionalmente, o valor nulo.
+            1. bool = true, false
+            2. bool? = true, false, null
+    
+            ```C#
+            bool? desejaReceberEmail = null;
+
+            if(desejaReceberEmail.HasValue && desejaReceberEmail.Value)
+            {
+                Console.WriteLine("O usuário optou por receber e-mail.");
+            }
+            else
+            {
+                Console.WriteLine("O usuário não respondeu ou optou por não receber e-mail.");
+            }
+            ```
+- Tipos Anônimos
+    -   Os tipos anônimos fornecem um modo conveniente de encapsular propriedades somente leitura.
+
+    ```C#
+    // EXEMPLO DE TIPO ANONIMO
+    var tipoAnonimo = new { Nome = "Rodrigo",  Sobrenome = "Camurça", Altura = 1.80 };
+
+    Console.WriteLine(
+    $"""
+
+    Nome: {tipoAnonimo.Nome}
+    Sobrenome: {tipoAnonimo.Sobrenome}
+    Altura: {tipoAnonimo.Altura}
+
+    """
+    );
+    ```
+    - Outro exemplo:
+    ```C#
+    DateTime dataAtual = DateTime.Now;
+    List<Vendas> listaDeVendas = [];
+    Vendas v1 = new(id: 1, produto: "Pão", preco: 25.00M, dataVenda: dataAtual, desconto: null);
+    Vendas v2 = new(id: 2, produto: "Pão Baguete", preco: 25.50M, dataVenda: dataAtual, desconto: 10M);
+
+    // Adicionando objetos na lista
+    listaDeVendas.Add(v1);
+    listaDeVendas.Add(v2);
+
+    // Extraindo propriedades especificas de um objeto
+    // Criando um novo objeto de tipos anonimos
+    var listaAnonima = listaDeVendas.Select(elemento => new { elemento.Produto, elemento.Preco });
+
+    foreach (var item in listaAnonima)
+    {
+        Console.WriteLine(
+            $"""
+
+            Produto: {item.Produto}
+            Preco: {item.Preco:C}
+            """
+        );
+    }
+    ```
+
+- Tipo de variável Dinamica (Dynamic):
+    ```C#
+    // Tipo de variável Dinamica
+    dynamic variavelDinamica = 4;
+    variavelDinamica = " ";
+    variavelDinamica = null;
+    ```
+
+- Classes genéricas
+    - As classes genéricas encapsulam operações que não são específicas de um determinado tipo de dados.
+
+    ```C#
+    namespace PropriedadesMetodosConstrutores.Models
+    {
+        public class MeuArray<T>
+        {
+            private static int capacidade = 10;
+            private int contador = 0;
+            private T[] array = new T[capacidade];
+
+            public void AddElementArray(T elemento)
+            {
+                if (contador + 1 < 11)
+                {
+                    array[contador] = elemento;
+                }
+                contador ++;
+            }
+
+            public T this[int index]
+            {
+                get { return array[index]; }
+                set { array[index] = value; }
+            }
+        }
+    }
+
+    MeuArray<int> arrayInteiro = new();
+
+    arrayInteiro.AddElementArray(30);
+
+    Console.WriteLine(arrayInteiro[0]);
+
+    MeuArray<string> arrayString = new();
+
+    arrayString.AddElementArray("30");
+
+    Console.WriteLine(arrayString[0]);
+    ```
+
+# Métodos de extensão
+- Os métodos de extensão permitem que você "adicione" tipos existentes sem criar um novo tipo derivado, recompilar ou, caso contrário, modificar o tipo original.
+
+```C#
+int numero = 20;
+bool par = false;
+
+par = numero % 2 == 0;
+
+string mensagem = "O número " + numero + " " + "é " + (par ? "par" : "ímpar");
+
+Console.WriteLine(mensagem);
+```
+
+- Neste exemplo temos um caso onde par = numero % 2 == 0; caso seja necessário verificar em vários lugares no código, teriamos que repetir várias vezes essa expressão, para evitarmos isso vamos criar um método de extensão, vamos criar uma classe para obter esse método de extensão, será necessário fazer a criação da classe com a palavra static pois a mesma nunca será instanciada:
+
+```C#
+namespace PropriedadesMetodosConstrutores.Models
+{
+    public static class IntExtensions
+    {
+        public static bool EhPar(this int numero)
+        {
+            return numero % 2 == 0;
+        }
+    }
+}
+
+// Agora o código refatorado
+int numero = 20;
+bool par = false;
+
+par = numero.EhPar();
+
+string mensagem = "O número " + numero + " " + "é " + (par ? "par" : "ímpar");
+
+Console.WriteLine(mensagem);
+```
+
+# Stack, Heap e Garbage Collector
+
+- Alocação de memória:
+    - Vamos entender os dois tipos de memória existentes no C#, tipos de valores e tipos de referência.
+
+- Declaração de variável:
+    ```C#
+    void Metodo(){
+        // Linha 1
+        int a = 5;
+
+        // Linha 2
+        int b = 10;
+
+        // Linha 3
+        Pessoa p1 = new();
+    }
+    ```
+    ![alt text](stack_e_heap.png)
+
+- O Stack é uma pilha (LIFO) e armazena em memória RAM, a Stack é estática.
+
+- O Heap armazena objetos que são mais complexos, a Heap é mais dinâmica.
+
+- Garbage Collector (GC) - Limpeza de memória, ela é executada automaticamente, quando um objeto não tiver mais referencia ligada a stack o mesmo entra em ação e mata o objeto inativo.
+
+# Tipos de valor e referência
+
+- __Tipo de valor:__ Uma variável de um tipo de valor contém uma instância do tipo.
+
+__Tipo de referência:__ Uma variável de um tipo de referência contém uma referência a uma instância do tipo.
+
+![alt text](tipos_de_valor_e_referencia.png)
+
+- Neste exemplo abaixo, quando atribuimos um novo valor ao nome de p2 como é a mesma refencia de p1 a mudança do nome também irá ocorrer em p1:
+
+![alt text](referencia_heap.png)
+
+# Desafio de projeto
+
+- Construindo um sistema de hospedagem de um hotel no C#:
+
+![alt text](desafio_de_projeto_uml.png)

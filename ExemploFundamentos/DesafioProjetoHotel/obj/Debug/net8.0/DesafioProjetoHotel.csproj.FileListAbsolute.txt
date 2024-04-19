@@ -1,0 +1,15 @@
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\bin\Debug\net8.0\DesafioProjetoHotel.exe
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\bin\Debug\net8.0\DesafioProjetoHotel.deps.json
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\bin\Debug\net8.0\DesafioProjetoHotel.runtimeconfig.json
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\bin\Debug\net8.0\DesafioProjetoHotel.dll
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\bin\Debug\net8.0\DesafioProjetoHotel.pdb
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\DesafioProjetoHotel.GeneratedMSBuildEditorConfig.editorconfig
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\DesafioProjetoHotel.AssemblyInfoInputs.cache
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\DesafioProjetoHotel.AssemblyInfo.cs
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\DesafioProjetoHotel.csproj.CoreCompileInputs.cache
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\DesafioProjetoHotel.sourcelink.json
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\DesafioProjetoHotel.dll
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\refint\DesafioProjetoHotel.dll
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\DesafioProjetoHotel.pdb
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\DesafioProjetoHotel.genruntimeconfig.cache
+C:\dotnet\ExemploFundamentos\DesafioProjetoHotel\obj\Debug\net8.0\ref\DesafioProjetoHotel.dll
