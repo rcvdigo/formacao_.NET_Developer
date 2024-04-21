@@ -11,7 +11,7 @@ Você é responsável pelo banco de dados de um site de filmes, onde são armaze
 Você precisará realizar 12 consultas ao banco de dados, cada uma retornando um tipo de informação.
 O seu banco de dados está modelado da seguinte maneira:
 
-![Diagrama banco de dados](Imagens/diagrama.png)
+![Diagrama banco de dados](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/diagrama.png?raw=true)
 
 As tabelas sao descritas conforme a seguir:
 
@@ -44,7 +44,7 @@ Você deverá criar diversas consultas, com o objetivo de retornar os dados a se
 
 ## 1 - Buscar o nome e ano dos filmes
 
-![Exercicio 1](Imagens/1.png)
+![Exercicio 1](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/1.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -55,7 +55,7 @@ FROM Filmes;
 
 ## 2 - Buscar o nome e ano dos filmes, ordenados por ordem crescente pelo ano
 
-![Exercicio 2](Imagens/2.png)
+![Exercicio 2](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/2.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -67,7 +67,7 @@ ORDER BY Ano ASC;
 
 ## 3 - Buscar pelo filme de volta para o futuro, trazendo o nome, ano e a duração
 
-![Exercicio 3](Imagens/3.png)
+![Exercicio 3](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/3.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -79,7 +79,7 @@ WHERE Nome = 'De Volta para o Futuro';
 
 ## 4 - Buscar os filmes lançados em 1997
 
-![Exercicio 4](Imagens/4.png)
+![Exercicio 4](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/4.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -91,7 +91,7 @@ WHERE Ano = 1997;
 
 ## 5 - Buscar os filmes lançados APÓS o ano 2000
 
-![Exercicio 5](Imagens/5.png)
+![Exercicio 5](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/5.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -103,7 +103,7 @@ WHERE Ano > 2000;
 
 ## 6 - Buscar os filmes com a duracao maior que 100 e menor que 150, ordenando pela duracao em ordem crescente
 
-![Exercicio 6](Imagens/6.png)
+![Exercicio 6](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/6.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -117,7 +117,7 @@ ORDER BY Duracao ASC;
 
 ## 7 - Buscar a quantidade de filmes lançadas no ano, agrupando por ano, ordenando pela duracao em ordem decrescente
 
-![Exercicio 7](Imagens/7.png)
+![Exercicio 7](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/7.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -130,7 +130,7 @@ ORDER BY QuantidadeFilmes DESC;
 
 ## 8 - Buscar os Atores do gênero masculino, retornando o PrimeiroNome, UltimoNome
 
-![Exercicio 8](Imagens/8.png)
+![Exercicio 8](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/8.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -142,7 +142,7 @@ WHERE Genero = 'M';
 
 ## 9 - Buscar os Atores do gênero feminino, retornando o PrimeiroNome, UltimoNome, e ordenando pelo PrimeiroNome
 
-![Exercicio 9](Imagens/9.png)
+![Exercicio 9](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/9.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -155,7 +155,7 @@ ORDER BY PrimeiroNome;
 
 ## 10 - Buscar o nome do filme e o gênero
 
-![Exercicio 10](Imagens/10.png)
+![Exercicio 10](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/10.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -168,7 +168,7 @@ INNER JOIN Generos G ON FG.IdGenero = G.Id;
 
 ## 11 - Buscar o nome do filme e o gênero do tipo "Mistério"
 
-![Exercicio 11](Imagens/11.png)
+![Exercicio 11](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/11.png?raw=true)
 
 # SOLUÇÃO:
 
@@ -182,7 +182,7 @@ WHERE G.Genero = 'Mistério';
 
 ## 12 - Buscar o nome do filme e os atores, trazendo o PrimeiroNome, UltimoNome e seu Papel
 
-![Exercicio 12](Imagens/12.png)
+![Exercicio 12](https://github.com/digitalinnovationone/trilha-net-banco-de-dados-desafio/blob/main/Imagens/12.png?raw=true)
 
 # SOLUÇÃO:
 
