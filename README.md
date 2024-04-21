@@ -1169,3 +1169,329 @@ __Tipo de referência:__ Uma variável de um tipo de referência contém uma ref
 ![alt text](desafio_de_projeto_uml.png)
 
 Clique aqui para acessar o [DESAFIO CONCLUÍDO!!!](https://github.com/rcvdigo/formacao_.NET_Developer/tree/main/ExemploFundamentos/DesafioProjetoHotel)
+
+# POO, com C#
+
+- Introdução POO, Abstração e Encapsulamento
+
+- A POO é um paradigma de programação, ou seja corresponde a uma técnica de programação para um fim específico.
+
+- Dentro desta técnica, existem quatro pilares:
+    1. Abstração
+    2. Encapsulamento
+    3. Herança
+    4. Polimorfismo
+
+- O principal conceito da POO são classes e objetos!
+
+- Um paradigma nada mais é do que um modelo de técnicas, estruturas e formas de solucionar um problema.
+
+- Paradigma de programação é diferente de linguagem de programação!
+
+- Uma linguagem de programação implementa um ou mais paradigmas.
+
+- Alguns exemplos de paradigmas de programação:
+
+    1. Programação orientada a objetos
+    2. Programação estruturada
+    3. Programação imperativa
+    4. Programação procedural
+    5. Programação orientada a eventos
+    6. Programação lógica
+
+# Abstração
+
+- Abstrair um objeto do mundo real para um contexto específico, considerando apenas os atributos importantes.
+
+    ```mermaid
+    classDiagram
+        class Pessoa {
+            + Nome: String
+            + Idade: Int
+            + apresentar() void
+        }
+    ```
+
+# Encapsulamento
+
+- O encapsulamento serve para proteger uma classe e definir limites para alteração de suas propriedades.
+
+- Serve para ocultar seu comportamento e expor somente o necessário.
+    ```mermaid
+    classDiagram
+        class ContaCorrente {
+            + Numero: int
+            - Saldo: decimal
+            + Sacar(decimal valor) void
+        }
+    ```
+
+# Herança
+
+- A herança nos permite reutilizar atributos, métodos e comportamentos de um classe em outras classes.
+
+- Serve para agrupar objetos que são do mesmo tipo, porém com características diferentes.
+
+    ```mermaid
+    classDiagram
+        class Aluno {
+            + Nome: string
+            + Idade: int
+            + Nota: double
+            + Apresentar() void
+        }
+
+        class Professor {
+            + Nome: string
+            + Idade: int
+            + Salario: decimal
+            + Apresentar() void
+        }
+    ```
+- Neste caso acima podemos verificar que atributos e métodos se repetem, sendo assim a boa prática diz que não devemos repetir códigos. Sendo assim teremos que usar o conceito de herança para atendermos este requisito.
+
+- Então vamos criar uma nova classe chamada Pessoa onde Aluno e Professor herdam seus atributos e métodos:
+
+    ```mermaid
+    classDiagram
+
+        Pessoa <|-- Aluno
+        Pessoa <|-- Professor
+        class Pessoa {
+            + Nome: string
+            + Idade: int
+            + Apresentar() void
+        }
+
+        class Aluno {
+            + Nota: double
+        }
+
+        class Professor {
+            + Salario: decimal
+        }
+    ```
+
+# Polimorfismo
+
+- O polimorfismo vem do grego e significa "Muitas Formas".
+
+- Com o polimorfismo, podemos sobrescrever métodos das classes filhas para que se comportem de maneira diferente e ter su própria implementação.
+
+- Para sobrescrever um método em uma classe herdada se faz necessário ir a classe pai e colocar a palavra reservada virtual, assim podemos sobreescrever um método de uma classe que herdamos.
+
+    ```C#
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    namespace POO.Models
+    {
+        public class Pessoa(string nome, int idade)
+        {
+            public string Nome { get; set; } = nome;
+            public int Idade { get; set; } = idade;
+
+            public virtual void Apresentar()
+            {
+                Console.WriteLine($"Olá, meu nome é {Nome} e tenho {Idade} anos!");
+            }
+        }
+    }
+    ```
+- Para implementar o polimorfismo na classe filha usamos a palavra override, ex:
+
+    ```C#
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    namespace POO.Models
+    {
+        public class Professor(string nome, int idade, decimal salario) : Pessoa(nome, idade)
+        {
+            public decimal Salario { get; set; } = salario;
+        
+            public override void Apresentar()
+            {
+                Console.WriteLine($"Olá, meu nome é {Nome} e tenho {Idade} anos, e sou um aluno nota {Nota}!");
+            }
+        }
+    }
+    ```
+
+# Classe abstrata
+
+- Uma classe abstrata tem como objetivo ser exclusivamente um modelo para ser herdado, portanto não pode ser instanciada.
+
+- Você pode implementar métodos ou deixá-los a cargo de quem herdar.
+
+    ```mermaid
+    classDiagram
+
+        Conta --|> Corrente
+
+        class Conta {
+            <<Abstract>>
+            - Saldo: double
+            + Creditar(decimal valor) <_Abstract>
+            + ExibirSaldo() void
+        }
+
+        class Corrente {
+            - Tarifa: double
+            + Creditar() void
+        }
+
+    ```
+
+    ```C#
+    // Representação do diagrama acima em C#
+
+    // Classe abstrata:
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    namespace POO.Models
+    {
+        public abstract class Conta
+        {
+            protected decimal saldo;
+
+            public abstract void Creditar(decimal valor);
+
+            public void ExibirSaldo()
+            {
+                Console.WriteLine($"O seu saldo é {saldo:C}");
+            }
+        }
+    }
+
+    // Classe que herda a classe abstrata
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    namespace POO.Models
+    {
+        public class Corrente : Conta
+        {
+            public override void Creditar(decimal valor)
+            {
+                saldo += valor;
+            }
+        }
+    }
+    ```
+
+# Classe selada
+
+- Uma classe selada tem como objetivo de impedir que outras classes façam uma herança dela, ou seja nenhuma classe pode ser sua derivada.
+Também existem métodos e propriedades seladas.
+```mermaid
+classDiagram
+
+    Pessoa --|> Aluno
+    Pessoa --|> Professor
+    Professor --|> "ERRADO" Diretor : X
+
+    class Pessoa {
+        + Nome: string
+        + Idade: int
+        + Apresentar() void
+    }
+
+    class Aluno {
+        + Nota: double
+        + Apresentar() void
+    }
+
+    class Professor {
+        <<sealed>>
+        + Salario: double
+        + Apresentar() void
+    }
+
+    class Diretor {
+
+    }
+
+```
+
+# Classe object
+
+- A classe System.Object é a mãe de todas as classes na hierarquia do .NET.
+- Todas as classes derivam, direta ou indiretamente da classe Object, e ela tem como objetivo prover serviços de baixo nível para suas classes filhas.
+
+# Interfaces
+
+- Uma interface é um contrato que pode ser implementado por uma classe.
+- É como se fosse uma classe abstrata, podendo definir métodos abstratos para serem implementados.
+- Assim como uma classe abstrata, uma interface não pode ser instanciada.
+
+```C#
+// Interface Calculadora
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace POO.interfaces
+{
+    public interface ICalculadora
+    {
+        int Somar(int num1, int num2);
+        int Subtrair(int num1, int num2);
+        int Multiplicar(int num1, int num2);
+        int Dividir(int num1, int num2);
+    }
+}
+
+// Classe Calculadora Implementa a Interface Calculadora
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using POO.interfaces;
+
+namespace POO.Models
+{
+    public class Calculadora : ICalculadora
+    {
+        public int Dividir(int num1, int num2)
+        {
+            return num1 / num2;
+        }
+
+        public int Multiplicar(int num1, int num2)
+        {
+            return num1 * num2;
+        }
+
+        public int Somar(int num1, int num2)
+        {
+            return num1 + num2;
+
+        }
+        public int Somar(int num1, int num2, int num3)
+        {
+            return num1 + num2 + num3;
+        }
+
+        public int Subtrair(int num1, int num2)
+        {
+            return num1 - num2;
+        }
+    }
+}
+```
+

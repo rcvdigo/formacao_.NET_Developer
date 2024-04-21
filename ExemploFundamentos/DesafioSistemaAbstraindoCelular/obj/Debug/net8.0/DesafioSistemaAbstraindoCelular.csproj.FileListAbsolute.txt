@@ -1,0 +1,15 @@
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\bin\Debug\net8.0\DesafioSistemaAbstraindoCelular.exe
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\bin\Debug\net8.0\DesafioSistemaAbstraindoCelular.deps.json
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\bin\Debug\net8.0\DesafioSistemaAbstraindoCelular.runtimeconfig.json
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\bin\Debug\net8.0\DesafioSistemaAbstraindoCelular.dll
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\bin\Debug\net8.0\DesafioSistemaAbstraindoCelular.pdb
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\DesafioSistemaAbstraindoCelular.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\DesafioSistemaAbstraindoCelular.AssemblyInfoInputs.cache
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\DesafioSistemaAbstraindoCelular.AssemblyInfo.cs
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\DesafioSistemaAbstraindoCelular.csproj.CoreCompileInputs.cache
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\DesafioSistemaAbstraindoCelular.sourcelink.json
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\DesafioSistemaAbstraindoCelular.dll
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\refint\DesafioSistemaAbstraindoCelular.dll
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\DesafioSistemaAbstraindoCelular.pdb
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\DesafioSistemaAbstraindoCelular.genruntimeconfig.cache
+C:\Users\act\Desktop\formacao_.NET_Developer\ExemploFundamentos\DesafioSistemaAbstraindoCelular\obj\Debug\net8.0\ref\DesafioSistemaAbstraindoCelular.dll

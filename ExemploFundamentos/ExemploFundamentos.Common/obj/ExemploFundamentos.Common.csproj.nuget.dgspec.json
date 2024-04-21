@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj": {}
+    "C:\\Users\\act\\Desktop\\formacao_.NET_Developer\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj": {}
   },
   "projects": {
-    "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj": {
+    "C:\\Users\\act\\Desktop\\formacao_.NET_Developer\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj",
+        "projectUniqueName": "C:\\Users\\act\\Desktop\\formacao_.NET_Developer\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj",
         "projectName": "ExemploFundamentos.Common",
-        "projectPath": "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj",
-        "packagesPath": "C:\\Users\\rcvdi\\.nuget\\packages\\",
-        "outputPath": "C:\\dotnet\\ExemploFundamentos\\ExemploFundamentos.Common\\obj\\",
+        "projectPath": "C:\\Users\\act\\Desktop\\formacao_.NET_Developer\\ExemploFundamentos\\ExemploFundamentos.Common\\ExemploFundamentos.Common.csproj",
+        "packagesPath": "C:\\Users\\act\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\act\\Desktop\\formacao_.NET_Developer\\ExemploFundamentos\\ExemploFundamentos.Common\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\rcvdi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\act\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
