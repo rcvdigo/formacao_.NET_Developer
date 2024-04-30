@@ -1,0 +1,120 @@
+@using Newtonsoft.Json.Linq
+@model List<Message>
+
+@{
+    ViewData["Title"] = "Listagem de contatos";
+}
+
+<h2>Contatos</h2>
+
+
+@if (Model != null && Model.Count > 0)
+{
+<table class="table">
+<thead>
+<tr>
+<th>ID</th>
+<th>Nome</th>
+<th>Idade</th>
+<th>Valor</th>
+<th>Data</th>
+<th>Chave Pix</th>
+<th>Origem</th>
+<th>Para</th>
+<th>Assunto</th>
+<th>Corpo do E-mail</th>
+<th>Telefones</th>
+<!-- Adicione mais colunas conforme necessário -->
+</tr>
+</thead>
+<tbody>
+@foreach (var message in Model)
+{
+<tr>
+<td>@message.Id</td>
+<td>@message.Name</td>
+<td>@message.Age</td>
+<td>@message.Value</td>
+<td>@message.Date</td>
+<td>@message.KeyPix</td>
+<td>@message.Source</td>
+<td>@message.To</td>
+<td>@message.Subject</td>
+<td>@message.Body</td>
+<td>@message.PhoneNumber</td>
+<!-- Adicione mais células conforme necessário -->
+</tr>
+}
+</tbody>
+</table>
+}
+else
+{
+<p>Nenhum conteúdo disponível.</p>
+}
+
+@* @if (ViewBag.Content != null)
+{
+    <p>Conteúdo da resposta:</p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th>Valor</th>
+                <th>Data</th>
+                <th>Chave Pix</th>
+                <th>Origem</th>
+                <th>Destinatário</th>
+                <th>Assunto</th>
+                <th>Corpo da mensagem</th>
+                <th>Telefones</th>
+                <!-- Adicione mais colunas conforme necessário -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var mongoItem in JObject.Parse(ViewBag.Content)["mongodb_response"])
+            {
+                var mongoData = (JObject)mongoItem.Value;
+                <tr>
+                    <td>@mongoData["_id"]</td>
+                    <td>@mongoData["name"]</td>
+                    <td>@mongoData["age"]</td>
+                    <td>@mongoData["value"]</td>
+                    <td>@mongoData["date"]</td>
+                    <td>@mongoData["key_pix"]</td>
+                    <td>@mongoData["source"]</td>
+                    <td>@mongoData["to"]</td>
+                    <td>@mongoData["subject"]</td>
+                    <td>@mongoData["body"]</td>
+                    <td>@mongoData["phone_numbers"]</td>
+                    <!-- Adicione mais células conforme necessário -->
+                </tr>
+            }
+
+            @foreach (var postgresItem in JObject.Parse(ViewBag.Content)["postgresql_response"])
+            {
+                var postgresData = (JObject)postgresItem.Value;
+                <tr>
+                    <td>@postgresData["id"]</td>
+                    <td>@postgresData["name"]</td>
+                    <td>@postgresData["age"]</td>
+                    <td>@postgresData["value"]</td>
+                    <td>@postgresData["date"]</td>
+                    <td>@postgresData["key_pix"]</td>
+                    <td>@postgresData["source"]</td>
+                    <td>@postgresData["to"]</td>
+                    <td>@postgresData["subject"]</td>
+                    <td>@postgresData["body"]</td>
+                    <td>@postgresData["phone_numbers"]</td>
+                    <!-- Adicione mais células conforme necessário -->
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nenhum conteúdo disponível.</p>
+} *@

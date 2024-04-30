@@ -1495,3 +1495,65 @@ namespace POO.Models
 }
 ```
 
+# O que é uma API
+
+- Uma API (Application Programming Interface) é uma forma de comunicação entre computadores ou programas de computadores.
+Em outras palavras, é um software que fornece informações para outro software.
+
+![API](api.png)
+
+- Vamos criar uma nova API no .NET.
+
+```C#
+// Criação de um novo projeto webapi
+$\ dotnet new webapi
+// Executar o servidor de desenvolvimento de api
+$\ dotnet watch run
+```
+
+- Uma Controller nada mais é que uma classe que vai agrupar todos nossos endpoints e requisições HTTP.
+
+- Agora vamos fazer a instalação do pacote EntityFramework para podermos utilizar ORM.
+
+```C#
+// Instalação do Entity Framework
+$\ dotnet tool install --global dotnet-ef
+
+// Instalação do Pacote
+$\ dotnet add package Microsoft.EntityFrameworkCore.Design
+
+// Instalação do Pacote SQLSERVER
+$\ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+```
+
+- Após fazer a criação das Entities e o Context no C# devemos executar as Migrations que serve para transcrever de código C# para o contexto de Banco de Dados relacional.
+
+```C#
+// Execução das Migrations
+$\ dotnet-ef migrations add CriacaoTabelaContato
+
+// Após a criação das migrations precisamos aplicar a criação das tabelas no banco de dados com o comando
+$\ dotnet-ef database update
+```
+
+# O padrão MVC
+
+- O padrão de arquitetura MVC(Model View Controller) separa um aplicativo em três grupos de componentes principais:
+
+1. Modelos
+2. Exibições
+3. Componentes
+
+- Esse padrão ajuda a obter a separação de interesses.
+
+# Criando um projeto MVC ASP.NET
+
+```C#
+$\ dotnet new mvc
+
+// Instalação do pacote para conexão com o banco de dados SQLserver
+$\ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+
+// Intalação do pacote Design
+$\ dotnet add package Microsoft.EntityFrameworkCore.Design
+```

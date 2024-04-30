@@ -1,0 +1,38 @@
+@model Tarefa
+
+@{
+    ViewData["Title"] = "Detalhes tarefa";
+}
+
+<h1>Detalhes tarefa</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Titulo)
+        </dt> @* Nome da coluna *@
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Titulo)
+        </dt> @* Nome do valor *@
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Descricao)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Descricao)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Data)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Data)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(x => x.Status)
+        </dt>
+        <dt class="col-sm-10">
+            @Html.DisplayFor(x => x.Status)
+        </dt>
+    </dl>
+</div>
+<a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+<a asp-action="Index">Voltar</a>

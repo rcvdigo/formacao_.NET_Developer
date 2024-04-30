@@ -1,0 +1,79 @@
+@model IEnumerable<Tarefa>
+
+@{
+    ViewData["Title"] = "Listagem de tarefas";
+}
+
+<h2>DESAFIO DIO CRUD TAREFAS</h2>
+
+<p>
+    <a asp-action="Create">Nova Tarefa</a>
+    <!-- Barra de busca -->
+    <form asp-action="Search" method="get">
+        <input type="text" name="searchString" placeholder="Busca por...">
+        <select name="searchField">
+            <option value="Titulo">Título</option>
+            <option value="Data">Data</option>
+            <option value="Status">Status</option>
+        </select>
+        <button type="submit">Buscar</button>
+    </form>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Descricao)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Data)
+                </td>
+                <td>
+                    @{
+                        // Verifica o status da tarefa e modifica a apresentação conforme necessário
+                        var status = item.Status.ToString();
+                        if (status == "EmAndamento")
+                        {
+                            status = "Em Andamento";
+                        }
+                        @status
+                    }
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                    <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
