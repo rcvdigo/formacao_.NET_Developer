@@ -1557,3 +1557,35 @@ $\ dotnet add package Microsoft.EntityFrameworkCore.SqlServer
 // Intalação do pacote Design
 $\ dotnet add package Microsoft.EntityFrameworkCore.Design
 ```
+
+# Deploy
+- Um deploy (ou publicação) é a etapa de disponibilizarmos um serviço em um local onde o usuário poderá acessar e trabalhar.
+No Azure, fazemos isso através do App Service.
+
+# O que é serverless?
+- Serverless é um modelo de desenvolvimento nativo em nuvem para criação e execução de aplicações sem o gerenciamento de servidores.
+Os servidores ainda são usados nesse modelo, mas eles são abastraídos do desenvolvimento de aplicações.
+
+# O que é Azure Functions?
+- As azure functions implementam o conceito serverless e permite executar códigos na plataforma da Azure, com suporte a diversas linguagens, como C#, Java, Javascript, Python, Typescript, Go, Rust...
+Azure functions são escalaveis horizontalmente de forma automática.
+
+-----------------------
+
+# Introdução TDD
+- ## O que é um TDD?
+    - Existem vários tipos de testes de software: unitários, integração, regressivo, segurança, etc...
+    - Os testes são fundamentais para garantir a qualidade e o correto funcionamento de um software.
+    - Serve principalmente para validar se o que foi construído está atendendo ao que se é esperado.
+- ## O que é um teste unitário?
+    - Teste unitário (ou teste de unidade) são testes realizados diretamente no código fonte, buscando testar a menor unidade de código possível, através de cenários que podem ocorrer no sistema.
+- ## Vantagens:
+    - A maior vantagem é a __qualidade__.
+    - Garante que a alteração não tenha impactos no sistema.
+    - Menos bugs.
+    - Maior confiança de que suas classes e métodos funcionam.
+    - Prevenir problemas futuros.
+- ## Frameworks de teste:
+    - MSTest
+    - Nunit
+    - xUnit

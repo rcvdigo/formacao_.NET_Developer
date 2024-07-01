@@ -110,10 +110,10 @@ namespace ModuloMVC.Controllers
         public IActionResult Search(string searchField, string searchString)
         {
             ViewBag.SearchField = searchField;
+            IEnumerable<Tarefa> tarefasEncontradas;
+
             if (!string.IsNullOrEmpty(searchString))
             {
-                IEnumerable<Tarefa> tarefasEncontradas;
-
                 switch (searchField)
                 {
                     case "Titulo":
@@ -123,17 +123,31 @@ namespace ModuloMVC.Controllers
                         if (DateTime.TryParse(searchString, out DateTime searchDate))
                         {
                             tarefasEncontradas = _tarefaContext.Tarefas.Where(t => t.Data.Date == searchDate.Date).ToList();
+
+                            if (!tarefasEncontradas.Any())
+                            {
+                                tarefasEncontradas = Enumerable.Empty<Tarefa>();
+                                ViewBag.ErrorMessage = "Formato de data inválido. Use o formato correto (dd/mm/yyyy).";
+                            }
                         }
                         else
                         {
                             // Lógica para lidar com uma string de busca inválida para data
-                            tarefasEncontradas = _tarefaContext.Tarefas.ToList();
+                            tarefasEncontradas = Enumerable.Empty<Tarefa>();
+                            ViewBag.ErrorMessage = "Formato de data inválido. Use o formato correto (dd/mm/yyyy).";
                         }
                         break;
                     case "Status":
-                        var statusString = searchString.ToLower().Replace(" ", "");
-                        tarefasEncontradas = _tarefaContext.Tarefas.ToList()
-                            .Where(t => t.Status.ToString().ToLower().Replace(" ", "") == statusString);
+                        if (Enum.TryParse(searchString.ToLower().Replace(" ", ""), true, out EnumStatusTarefa statusEnum))
+                        {
+                            tarefasEncontradas = _tarefaContext.Tarefas.Where(s => s.Status == statusEnum).ToList();
+                        }
+                        else
+                        {
+                            // Lógica para lidar com uma string de busca inválida para status
+                            tarefasEncontradas = _tarefaContext.Tarefas.ToList()
+                            .Where(t => t.Status.ToString().ToLower().Replace(" ", "") == searchString.Trim().Replace(" ", ""));
+                        }
                         break;
                     default:
                         // Se nenhum campo válido for selecionado, retorna todas as tarefas
